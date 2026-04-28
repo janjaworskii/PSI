@@ -171,6 +171,10 @@ corpus <- tm_map(corpus, toSpace, "(RT|via)((?:\\b\\W*@\\w+)+)")
 corpus <- tm_map(corpus, toSpace, "www")
 corpus <- tm_map(corpus, toSpace, "~")
 corpus <- tm_map(corpus, toSpace, "â€“")
+corpus <- tm_map(corpus, toSpace, "–")
+corpus <- tm_map(corpus, toSpace, "—")
+corpus <- tm_map(corpus, toSpace, "-")
+
 
 
 # Sprawdzenie
@@ -187,7 +191,7 @@ corpus <- tm_map(corpus, stripWhitespace)
 corpus[[1]][[1]]
 
 # usunięcie ewt. zbędnych słów
-corpus <- tm_map(corpus, removeWords, c("flight", "lot"))
+ corpus <- tm_map(corpus, removeWords, c("flight", "lot"))
 
 corpus <- tm_map(corpus, stripWhitespace)
 
